@@ -12,20 +12,40 @@ function Body(props) {
   // hook
   const [productList, setProductList] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [cartList, setCartList] = useState([]);
   useEffect(() => {
     // Fetch API with Axios
     httpRequest().then((response) => {
       setProductList(response.data);
     });
   }, []);
-  const handleClickShowCart = () => {
-    setShowCart(true);
+
+  // Init the list of item on cart
+
+  // Function show the Cart
+  const handleClickShowCart = (value) => {
+    setShowCart(value);
+  };
+  // Function add product to Cart
+  const handleAddProduct = (item) => {
+    let count = 1;
+    let newItem = { ...item, count: count };
+    console.log(cartList.every((element) => element.id != item.id));
+    if (cartList.every((element) => element.id != item.id)) {
+      setCartList([...cartList, newItem]);
+    } else {
+      // update the CartList with increase count
+    }
   };
   return (
     <div className="body">
-      <ProductList list={productList} />
+      <ProductList list={productList} handleAddProduct={handleAddProduct} />
       <CartBtn handleClickShowCart={handleClickShowCart} />
-      <Cart display={showCart} />
+      <Cart
+        display={showCart}
+        handleClickShowCart={handleClickShowCart}
+        cartList={cartList}
+      />
     </div>
   );
 }

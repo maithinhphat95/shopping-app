@@ -5,7 +5,7 @@ import "./style.scss";
 ProductItem.propTypes = {};
 
 function ProductItem(props) {
-  const { product } = props;
+  const { product, handleAddProduct } = props;
   return (
     <div className="product-item">
       <img
@@ -17,7 +17,13 @@ function ProductItem(props) {
       <div className="product-item-detail">
         <h3>{product.name}</h3>
         <p>${product.price}</p>
-        <button>Add to cart</button>
+        <button
+          onClick={() => {
+            handleAddProduct(product);
+          }}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );

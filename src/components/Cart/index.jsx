@@ -7,23 +7,18 @@ Cart.propTypes = {};
 
 function Cart(props) {
   // Props
-  const { display } = props;
+  const { display, handleClickShowCart, cartList } = props;
   // Hook
-  const [show, setShow] = useState(display);
+  console.log(cartList);
 
-  const cartWidth = show ? 500 : 0;
-  const handleCloseCart = () => {
-    setShow(false);
-  };
-  console.log(display);
-  console.log(show);
-  console.log(cartWidth);
+  const cartWidth = display ? 500 : 0;
+
   return (
     <div className="cart" style={{ width: cartWidth }}>
       <div className="cart-header">
         <button
           onClick={() => {
-            handleCloseCart();
+            handleClickShowCart(false);
           }}
         >
           <FontAwesomeIcon icon={faXmark} />

@@ -12,7 +12,7 @@ function CartBtn(props) {
     <div className="cart-btn">
       <button
         onClick={() => {
-          handleClickShowCart();
+          handleClickShowCart(true);
         }}
       >
         <FontAwesomeIcon icon={faCartShopping} />
