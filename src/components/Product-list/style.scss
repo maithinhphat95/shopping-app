@@ -1,0 +1,20 @@
+.product-container {
+  flex: 12;
+  > p {
+    margin: 20px 0;
+    font-size: 20px;
+    color: gray;
+    span {
+      font-weight: bold;
+      color: black;
+    }
+  }
+}
+.product-list {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  padding: 8px;
+  gap: 30px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}

@@ -1,0 +1,17 @@
+.cart-btn {
+  flex: 1;
+  text-align: right;
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: pink;
+    font-size: 40px;
+    border: none;
+    &:hover {
+      background-color: rgba(255, 192, 203, 0.6);
+      // opacity: 0.6;
+    }
+  }
+}

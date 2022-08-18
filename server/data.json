@@ -2,25 +2,25 @@
   "data": [
     {
       "id": 1,
-      "name": "Meo den",
+      "name": "Mèo đen",
       "image": "https://thoitrangmantis.com/wp-content/uploads/2019/01/ao-phong-co-tron-meo-3d1-ngoc.jpg",
       "price": "100"
     },
     {
       "id": 2,
-      "name": "Tha Tim",
+      "name": "Thả Tim",
       "image": "https://babi.vn/images/companies/1/Up%20hinh%20san%20pham/22493/ao-thun-gia-dinh-in-hinh-tha-tim-danh-cho-ba%20(1).jpg?1528776311374",
       "price": "50"
     },
     {
       "id": 3,
-      "name": "Trang",
+      "name": "Trắng",
       "image": "https://thuviendohoa.vn/upload/images/items/hinh-anh-ao-phong-nam-mau-trang-png-514.webp",
       "price": "20"
     },
     {
       "id": 4,
-      "name": "Hong tinh ban",
+      "name": "Hồng Tình Bạn",
       "image": "https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-03.jpg",
       "price": "60"
     },
@@ -32,19 +32,19 @@
     },
     {
       "id": "6",
-      "name": "Khung Long",
+      "name": "Khủng Long",
       "image": "https://namlongfashion.com/wp-content/uploads/2020/03/134.jpg",
       "price": "50"
     },
     {
       "id": "7",
-      "name": "Thun Den",
+      "name": "Thun Đen",
       "image": "https://www.shophaiyen.com/wp-content/uploads/2018/09/M%E1%BA%B7t-sau-%C3%81o-thun-3D-Th%C3%A1i-Lan-1.jpg",
       "price": "60"
     },
     {
       "id": "8",
-      "name": "Gau Hong",
+      "name": "Gấu Hồng",
       "image": "https://sakurafashion.vn/upload/sanpham/large/4331-ao-thun-nu-hinh-2-chu-tho-1.jpg",
       "price": "90"
     },
@@ -56,7 +56,7 @@
     },
     {
       "id": "10",
-      "name": "Gia Dinh",
+      "name": "Gia Đình",
       "image": "https://file.hstatic.net/1000283001/file/dong-phuc-gia-dinh-2019_-2020_30__f12ce2f83348493bb83dbb9fbdecf1de_grande.jpg",
       "price": "60"
     },
@@ -178,6 +178,18 @@
       "id": "30",
       "name": "Brook",
       "image": "https://cf.shopee.vn/file/185ce48643a22a048bac9d3f40404e2f",
+      "price": "90"
+    },
+    {
+      "id": "31",
+      "name": "Jinbei",
+      "image": "https://cf.shopee.vn/file/f4d7827846312c9090285be30e3cfa9d",
+      "price": "90"
+    },
+    {
+      "id": "32",
+      "name": "Thousan Sunny",
+      "image": "https://cf.shopee.vn/file/e9e083e6117181cdb7a355e1e5c9efcc",
       "price": "90"
     }
   ]

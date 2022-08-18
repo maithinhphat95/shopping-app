@@ -1,20 +1,25 @@
 .side-bar {
   flex: 3;
+  padding: 10px;
+  h3 {
+    margin: 20px 0 20px;
+  }
   .size-select {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     &-item {
+      --size: 50px;
       display: block;
-      height: 40px;
-      width: 40px;
-      font-size: 12px;
+      height: var(--size);
+      width: var(--size);
+      font-size: 16px;
       font-weight: 600;
       border: 0;
       border-radius: 50%;
       background-color: var(--primary-color);
       text-align: center;
-      line-height: 40px;
+      line-height: var(--size);
       cursor: pointer;
       &:active {
         background-color: black;
@@ -26,6 +31,7 @@
     font-size: 14px;
     text-align: center;
     color: var(--secondary-color);
+    margin: 10px 0 10px;
   }
   button {
     display: block;
@@ -37,5 +43,10 @@
     cursor: pointer;
     border: 1px solid var(--primary-color);
     border-radius: 4px;
+    &:active {
+      background-image: none;
+      background-color: black;
+      color: white;
+    }
   }
 }
