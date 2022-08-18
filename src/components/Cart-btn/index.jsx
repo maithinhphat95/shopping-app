@@ -7,9 +7,14 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 CartBtn.propTypes = {};
 
 function CartBtn(props) {
+  const { handleClickShowCart } = props;
   return (
     <div className="cart-btn">
-      <button>
+      <button
+        onClick={() => {
+          handleClickShowCart();
+        }}
+      >
         <FontAwesomeIcon icon={faCartShopping} />
       </button>
     </div>

@@ -6,13 +6,20 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 Cart.propTypes = {};
 
 function Cart(props) {
+  // Props
+  const { display } = props;
   // Hook
-  const [close, setClose] = useState("none");
+  const [show, setShow] = useState(display);
+
+  const cartWidth = show ? 500 : 0;
   const handleCloseCart = () => {
-    setClose(true);
+    setShow(false);
   };
+  console.log(display);
+  console.log(show);
+  console.log(cartWidth);
   return (
-    <div className="cart">
+    <div className="cart" style={{ width: cartWidth }}>
       <div className="cart-header">
         <button
           onClick={() => {

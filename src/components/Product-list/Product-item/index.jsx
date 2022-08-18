@@ -6,7 +6,6 @@ ProductItem.propTypes = {};
 
 function ProductItem(props) {
   const { product } = props;
-  console.log(product);
   return (
     <div className="product-item">
       <img

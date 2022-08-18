@@ -11,18 +11,21 @@ Body.propTypes = {};
 function Body(props) {
   // hook
   const [productList, setProductList] = useState([]);
+  const [showCart, setShowCart] = useState(false);
   useEffect(() => {
     // Fetch API with Axios
     httpRequest().then((response) => {
       setProductList(response.data);
     });
   }, []);
-
+  const handleClickShowCart = () => {
+    setShowCart(true);
+  };
   return (
     <div className="body">
       <ProductList list={productList} />
-      <CartBtn />
-      <Cart />
+      <CartBtn handleClickShowCart={handleClickShowCart} />
+      <Cart display={showCart} />
     </div>
   );
 }
