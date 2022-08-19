@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,9 +8,17 @@ Cart.propTypes = {};
 
 function Cart(props) {
   // Props
-  const { display, handleClickShowCart, cartList } = props;
-
+  const { display, handleClickShowCart, cartList, updateCart } = props;
   const cartWidth = display ? 500 : 0;
+  let total = 0;
+  let priceList = [];
+  try {
+    priceList = cartList == [] ? [] : cartList.map((e) => e.price * e.count);
+    total =
+      priceList == []
+        ? 0
+        : priceList.reduce((total, current) => total + current);
+  } catch (error) {}
 
   return (
     <div className="cart " style={{ width: cartWidth }}>
@@ -23,12 +31,18 @@ function Cart(props) {
           <FontAwesomeIcon icon={faXmark} />
         </button>
         <p>Your Shopping Cart</p>
-        <div className="cart-number">6</div>
+        <div className="cart-number">{cartList.length}</div>
       </div>
       <div className="cart-selected">
         {cartList.map((item) => (
-          <CartItem key={item.id} cartItem={item} />
+          <CartItem key={item.id} cartItem={item} updateCart={updateCart} />
         ))}
+        <div className="cart-selected-total">
+          <p>
+            Subtotal: <b>$ {total || 0}</b>
+          </p>
+          <button>Payment</button>
+        </div>
       </div>
     </div>
   );

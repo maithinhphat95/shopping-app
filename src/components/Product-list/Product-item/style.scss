@@ -36,16 +36,15 @@
     padding-bottom: 8px;
     background-color: white;
     button {
+      margin-top: 4px;
       height: 30px;
       background-color: #4ab9f8;
       border: 0;
       border-radius: 4px;
       color: white;
       padding: 0 10px;
-      margin-top: 4px;
       &:active {
-        background-color: var(--primary-color);
-        color: black;
+        background-color: yellowgreen;
       }
       &:hover {
         opacity: 0.6;

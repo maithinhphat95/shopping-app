@@ -78,6 +78,35 @@
         font-size: 24px;
         margin: 0 8px;
       }
+      .item-prices {
+        width: 50px;
+        text-align: right;
+      }
+    }
+    &-total {
+      padding: 10px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      p {
+        font-size: 20px;
+      }
+      button {
+        margin-top: 10px;
+        align-self: flex-end;
+        height: 30px;
+        width: 100px;
+        background-color: #4ab9f8;
+        border: 0;
+        border-radius: 4px;
+        color: white;
+        &:active {
+          background-color: yellowgreen;
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
   }
 }

@@ -9,6 +9,7 @@
     img {
       padding: 4px;
       width: 60%;
+      max-width: 120px;
       height: var(--header-size);
     }
   }
@@ -19,8 +20,9 @@
     .nav-item {
       display: flex;
       align-items: center;
-      button {
+      &-link {
         height: 80%;
+        display: flex;
       }
     }
   }

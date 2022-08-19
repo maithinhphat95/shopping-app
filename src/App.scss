@@ -11,6 +11,9 @@ html {
   box-sizing: border-box;
   margin: 0;
   font-family: "Roboto Slab", serif;
+  a {
+    text-decoration: none;
+  }
 }
 button {
   cursor: pointer;
@@ -20,4 +23,14 @@ button {
     display: flex;
   }
   border: 1px solid gray;
+  .totop {
+    position: fixed;
+    right: 10px;
+    bottom: 100px;
+    display: block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
 }

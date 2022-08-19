@@ -6,8 +6,11 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 CartItem.propTypes = {};
 
 function CartItem(props) {
-  const { cartItem } = props;
-  console.log(cartItem);
+  const { cartItem, updateCart } = props;
+  const updateCartProduct = (action, item) => {
+    updateCart(action, item);
+  };
+  let price = cartItem.price * cartItem.count;
   return (
     <div className="cart-selected-item">
       <div className="cart-selected-item-detail">
@@ -16,12 +19,35 @@ function CartItem(props) {
       </div>
       <div className="cart-selected-item-detail">
         <div className="item-count">
-          <button>-</button>
-          <input type="text" value={cartItem.count} />
-          <button>+</button>
+          <button
+            onClick={() => {
+              updateCartProduct("decrease", cartItem);
+            }}
+          >
+            -
+          </button>
+          <input
+            type="text"
+            value={cartItem.count}
+            onChange={(e) => {
+              updateCartProduct(e.target.value, cartItem);
+            }}
+          />
+          <button
+            onClick={() => {
+              updateCartProduct("increase", cartItem);
+            }}
+          >
+            +
+          </button>
         </div>
-        <div className="item-prices">$100</div>
-        <button className="item-delete">
+        <div className="item-prices">${price}</div>
+        <button
+          className="item-delete"
+          onClick={() => {
+            updateCartProduct("delete", cartItem);
+          }}
+        >
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </div>
