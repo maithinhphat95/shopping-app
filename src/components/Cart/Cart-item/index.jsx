@@ -1,22 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 CartItem.propTypes = {};
 
 function CartItem(props) {
+  const { cartItem } = props;
+  console.log(cartItem);
   return (
     <div className="cart-selected-item">
       <div className="cart-selected-item-detail">
-        <img
-          src="https://cf.shopee.vn/file/e9e083e6117181cdb7a355e1e5c9efcc"
-          alt=""
-        />
-        <p>Name</p>
+        <img src={cartItem.image} alt="" />
+        <p>{cartItem.name}</p>
       </div>
       <div className="cart-selected-item-detail">
         <div className="item-count">
           <button>-</button>
-          <input type="text" defaultValue={1} />
+          <input type="text" value={cartItem.count} />
           <button>+</button>
         </div>
         <div className="item-prices">$100</div>

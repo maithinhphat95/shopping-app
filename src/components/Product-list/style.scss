@@ -16,5 +16,27 @@
   padding: 8px;
   gap: 30px;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+
+  grid-template-columns: auto auto auto auto auto;
+}
+@media only screen and (max-width: 1200px) {
+  .product-list {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .product-list {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .product-list {
+    grid-template-columns: auto auto;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .product-list {
+    grid-template-columns: auto;
+  }
 }

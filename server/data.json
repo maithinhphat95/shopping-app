@@ -1,5 +1,5 @@
 {
-  "data": [
+  "productList": [
     {
       "id": 1,
       "name": "Mèo đen",
@@ -191,6 +191,43 @@
       "name": "Thousan Sunny",
       "image": "https://cf.shopee.vn/file/e9e083e6117181cdb7a355e1e5c9efcc",
       "price": "90"
+    }
+  ],
+  "cartList": [
+    {
+      "id": 1,
+      "name": "Mèo đen",
+      "image": "https://thoitrangmantis.com/wp-content/uploads/2019/01/ao-phong-co-tron-meo-3d1-ngoc.jpg",
+      "price": "100",
+      "count": 1
+    },
+    {
+      "id": 2,
+      "name": "Thả Tim",
+      "image": "https://babi.vn/images/companies/1/Up%20hinh%20san%20pham/22493/ao-thun-gia-dinh-in-hinh-tha-tim-danh-cho-ba%20(1).jpg?1528776311374",
+      "price": "50",
+      "count": 1
+    },
+    {
+      "id": "23",
+      "name": "Katakuri",
+      "image": "https://vn-live-01.slatic.net/p/2dc4d4fb5b678a257397084b90cbc4b6.jpg",
+      "price": "90",
+      "count": 1
+    },
+    {
+      "id": "24",
+      "name": "Nami",
+      "image": "https://cf.shopee.vn/file/cd0df9807a62299399d1280af6b85b3e",
+      "price": "90",
+      "count": 1
+    },
+    {
+      "id": "28",
+      "name": "Nico Robin",
+      "image": "https://cf.shopee.vn/file/99bc6c3f79d172e3ef847a30a77aaba9",
+      "price": "90",
+      "count": 1
     }
   ]
 }

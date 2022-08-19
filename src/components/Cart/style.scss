@@ -1,8 +1,8 @@
 .cart {
-  width: 500px;
+  // width: 500px;
   overflow: hidden;
   transition: 0.5s;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 2;
@@ -38,7 +38,7 @@
     }
   }
   &-selected {
-    width: 450px;
+    width: 90%;
     background-color: rgba($color: #000000, $alpha: 0.8);
 
     &-item {
@@ -59,6 +59,7 @@
 
       .item-count {
         margin-right: 20px;
+        text-align: center;
         & > input {
           width: 30px;
           outline: none;
@@ -78,5 +79,17 @@
         margin: 0 8px;
       }
     }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .cart-header p {
+    font-size: 20px;
+    text-align: center;
+  }
+  .cart {
+    max-width: 100% !important;
+  }
+  .cart-selected-item-detail p {
+    display: none;
   }
 }

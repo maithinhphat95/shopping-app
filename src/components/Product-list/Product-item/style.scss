@@ -1,16 +1,37 @@
 .product-item {
-  width: 100%;
+  // width: 100%;
+  // min-width: 180px;
+  // max-width: 200px;
+  width: 180px;
   margin: 0 auto;
   border: 1px solid black;
   border-radius: 8px;
   overflow: hidden;
-  img {
-    display: block;
+  .img-box {
     width: 100%;
-    height: 200px;
+    height: 180px;
+    overflow: hidden;
     border-bottom: 1px solid black;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translateX(-10%) translateY(-10%);
+        width: 120%;
+        height: 120%;
+
+        text-align: center;
+        opacity: 0.6;
+      }
+    }
   }
   &-detail {
+    overflow: hidden;
     text-align: center;
     padding-bottom: 8px;
     background-color: white;

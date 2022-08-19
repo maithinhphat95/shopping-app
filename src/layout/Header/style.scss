@@ -1,0 +1,27 @@
+.header {
+  --header-size: 50px;
+  display: flex;
+  height: var(--header-size);
+  background-color: var(--primary-color);
+  .logo {
+    flex: 3;
+    text-align: center;
+    img {
+      padding: 4px;
+      width: 60%;
+      height: var(--header-size);
+    }
+  }
+  .nav-bar {
+    flex: 16;
+    display: flex;
+    gap: 2px;
+    .nav-item {
+      display: flex;
+      align-items: center;
+      button {
+        height: 80%;
+      }
+    }
+  }
+}

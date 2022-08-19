@@ -6,24 +6,24 @@ ProductItem.propTypes = {};
 
 function ProductItem(props) {
   const { product, handleAddProduct } = props;
+  const addCart = () => {
+    handleAddProduct(product);
+  };
   return (
     <div className="product-item">
-      <img
-        className="product-item-img"
-        src={product.image}
-        alt={product.name}
-        title={product.name}
-      />
+      <div className="img-box">
+        <img
+          className="product-item-img"
+          src={product.image}
+          alt={product.name}
+          title={product.name}
+        />
+      </div>
+
       <div className="product-item-detail">
         <h3>{product.name}</h3>
         <p>${product.price}</p>
-        <button
-          onClick={() => {
-            handleAddProduct(product);
-          }}
-        >
-          Add to cart
-        </button>
+        <button onClick={addCart}>Add to cart</button>
       </div>
     </div>
   );

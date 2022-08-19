@@ -3,7 +3,7 @@
   --secondary-color: rgb(160, 160, 160);
 }
 html {
-  width: 1200px;
+  /* width: 1200px; */
   margin: 0 auto 0 auto;
   font-size: inherit;
 }
@@ -16,6 +16,8 @@ button {
   cursor: pointer;
 }
 .App {
-  display: flex;
+  .main {
+    display: flex;
+  }
   border: 1px solid gray;
 }
