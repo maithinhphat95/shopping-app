@@ -5,18 +5,18 @@ import "./style.scss";
 ProductList.propTypes = {};
 
 function ProductList(props) {
-  const { list, handleAddProduct } = props;
+  const { list, handleAddCart } = props;
   return (
     <div className="product-container">
       <p>
-        Total: <span>{list.length} product</span>
+        Total: <span>{list.length} products</span>
       </p>
       <div className="product-list">
         {list.map((item) => (
           <ProductItem
             key={item.id}
             product={item}
-            handleAddProduct={handleAddProduct}
+            handleAddCart={handleAddCart}
           />
         ))}
       </div>

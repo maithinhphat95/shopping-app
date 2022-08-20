@@ -6,6 +6,8 @@ import { httpRequest, dataStorage } from "../../constant";
 import ToTopBtn from "../../components/ToTopBtn";
 import "./style.scss";
 import Cart from "../../components/Cart";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import AddProduct from "../../components/AddProduct";
 
 Body.propTypes = {};
 
@@ -18,34 +20,42 @@ function Body(props) {
   const [showCart, setShowCart] = useState(false);
   const [toTop, setToTop] = useState(false);
   const [deps, setDeps] = useState(false);
+  const navigate = useNavigate();
 
   // Fetch product list with Axios API
   // Get:
   useEffect(() => {
-    httpRequest.get(dataProduct).then((response) => {
-      setProductList(response.data);
-    });
+    httpRequest
+      .get(dataProduct)
+      .then((response) => setProductList(response.data));
   }, []);
   // Post:
   const postProduct = (item) => {
     httpRequest
       .post(dataProduct, item)
-      .then((response) => console.log(response.data));
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error));
+    let newList = [...productList, item];
+    setProductList(newList);
+    navigate("/shopping-app");
   };
 
   // Fetch cart list with Axios API
   // Get:
   useEffect(() => {
-    httpRequest.get(userProduct).then((response) => {
-      setCartList(response.data);
-    });
-    console.log(cartList);
+    httpRequest
+      .get(userProduct)
+      .then((response) => {
+        setCartList(response.data);
+      })
+      .catch((error) => console.log(error));
   }, [deps]);
   // Post:
   const postCart = (item) => {
     httpRequest
       .post(userProduct, item)
-      .then((response) => console.log(response.data));
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error));
   };
   // Put:
   const putCart = (item, action) => {
@@ -85,7 +95,7 @@ function Body(props) {
   };
 
   // Function add product to Cart
-  const handleAddProduct = (item) => {
+  const handleAddCart = (item) => {
     let count = 1;
     let newItem = { ...item, count: count };
 
@@ -93,6 +103,7 @@ function Body(props) {
       // Add a new product to cart list
       setCartList([...cartList, newItem]);
       postCart(newItem);
+      setDeps(!deps);
     } else {
       // Update the cart list with increase count
       let carItem = cartList.find((e) => e.id == item.id);
@@ -101,6 +112,7 @@ function Body(props) {
     }
   };
 
+  // Handle update cart (count, delete)
   const updateCart = (action, cartItem) => {
     if (action === "increase") {
       // code handle increase count
@@ -125,7 +137,21 @@ function Body(props) {
 
   return (
     <div className="body">
-      <ProductList list={productList} handleAddProduct={handleAddProduct} />
+      <Routes>
+        <Route
+          path="/shopping-app"
+          element={
+            <ProductList list={productList} handleAddCart={handleAddCart} />
+          }
+        />
+        <Route
+          path="/shopping-app/add"
+          element={
+            <AddProduct productList={productList} handlePost={postProduct} />
+          }
+        />
+      </Routes>
+
       <CartBtn handleClickShowCart={handleClickShowCart} />
       <Cart
         display={showCart}

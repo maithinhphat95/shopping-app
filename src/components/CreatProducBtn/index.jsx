@@ -2,18 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-CreatProduct.propTypes = {};
+CreatProductBtn.propTypes = {};
 
-function CreatProduct(props) {
-  const { handleCreatProduct } = props;
-
+function CreatProductBtn(props) {
   return (
     <div className="nav-item">
-      <Link to="/shopping-app/create-product" className="nav-item-link">
+      <Link to="/shopping-app/add" className="nav-item-link">
         <button type="">Creat A New Product</button>
       </Link>
     </div>
   );
 }
 
-export default CreatProduct;
+export default CreatProductBtn;

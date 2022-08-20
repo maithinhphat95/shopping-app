@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import CreatProduct from "../../components/CreatProduct";
+import CreatProductBtn from "../../components/CreatProducBtn";
 import "./style.scss";
 import { Link } from "react-router-dom";
 
 Header.propTypes = {};
 
 function Header(props) {
-  const { handleCreatProduct } = props;
   return (
     <div className="header">
       <Link
@@ -21,7 +20,7 @@ function Header(props) {
         />
       </Link>
       <div className="nav-bar">
-        <CreatProduct handleCreatProduct={handleCreatProduct} />
+        <CreatProductBtn />
       </div>
     </div>
   );

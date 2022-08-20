@@ -1,11 +1,16 @@
 :root {
   --primary-color: rgb(227, 225, 225);
   --secondary-color: rgb(160, 160, 160);
+  --button-color: #4ab9f8;
 }
 html {
   /* width: 1200px; */
   margin: 0 auto 0 auto;
   font-size: inherit;
+  min-height: 100%;
+  body {
+    min-height: 100%;
+  }
 }
 * {
   box-sizing: border-box;
@@ -19,10 +24,11 @@ button {
   cursor: pointer;
 }
 .App {
+  min-height: 100%;
   .main {
     display: flex;
+    min-height: 100%;
   }
-  border: 1px solid gray;
   .totop {
     position: fixed;
     right: 10px;

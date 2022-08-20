@@ -5,9 +5,9 @@ import "./style.scss";
 ProductItem.propTypes = {};
 
 function ProductItem(props) {
-  const { product, handleAddProduct } = props;
+  const { product, handleAddCart } = props;
   const addCart = () => {
-    handleAddProduct(product);
+    handleAddCart(product);
   };
   return (
     <div className="product-item">
@@ -23,7 +23,13 @@ function ProductItem(props) {
       <div className="product-item-detail">
         <h3>{product.name}</h3>
         <p>${product.price}</p>
-        <button onClick={addCart}>Add to cart</button>
+        <button
+          onClick={() => {
+            addCart();
+          }}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );

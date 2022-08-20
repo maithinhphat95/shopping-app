@@ -9,15 +9,14 @@ CartBtn.propTypes = {};
 function CartBtn(props) {
   const { handleClickShowCart } = props;
   return (
-    <div className="cart-btn">
-      <button
-        onClick={() => {
-          handleClickShowCart(true);
-        }}
-      >
-        <FontAwesomeIcon icon={faCartShopping} />
-      </button>
-    </div>
+    <button
+      className="cart-btn"
+      onClick={() => {
+        handleClickShowCart(true);
+      }}
+    >
+      <FontAwesomeIcon icon={faCartShopping} />
+    </button>
   );
 }
 
