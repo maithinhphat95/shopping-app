@@ -1,6 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
+import {
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+  Typography,
+  Button,
+  CardActions,
+} from "@material-ui/core";
 
 ProductItem.propTypes = {};
 
@@ -32,6 +41,36 @@ function ProductItem(props) {
         </button>
       </div>
     </div>
+
+    // <Card className="product-item">
+    //   <CardActionArea>
+    //     <CardMedia
+    //       // className="product-item-img"
+    //       style={{ height: 200, width: 200 }}
+    //       image={product.image}
+    //       title="Contemplative Reptile"
+    //     />
+    //     <CardContent className="product-item-detail">
+    //       <Typography gutterBottom variant="h5" component="h2">
+    //         {product.name}
+    //       </Typography>
+    //       <Typography variant="body2" color="textSecondary" component="p">
+    //         ${product.price}
+    //       </Typography>
+    //     </CardContent>
+    //   </CardActionArea>
+    //   <CardActions>
+    //     <Button
+    //       size="small"
+    //       color="primary"
+    //       onClick={() => {
+    //         addCart();
+    //       }}
+    //     >
+    //       Add
+    //     </Button>
+    //   </CardActions>
+    // </Card>
   );
 }
 

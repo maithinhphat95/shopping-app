@@ -10,7 +10,7 @@ function Header(props) {
   return (
     <div className="header">
       <Link
-        to="/shopping-app"
+        to="/shopping-app/products"
         className="logo"
         title="http://localhost:3000/shopping-app"
       >

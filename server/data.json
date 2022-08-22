@@ -1,5 +1,5 @@
 {
-  "productList": [
+  "products": [
     {
       "id": "0",
       "name": "Thousan Sunny",
@@ -262,6 +262,13 @@
       "image": "https://cf.shopee.vn/file/d997b4fca73cf21ee167ffa5c7e070c2",
       "price": "70",
       "count": 3
+    },
+    {
+      "id": "0",
+      "name": "Thousan Sunny",
+      "image": "https://cf.shopee.vn/file/e9e083e6117181cdb7a355e1e5c9efcc",
+      "price": "90",
+      "count": 2
     }
   ]
 }

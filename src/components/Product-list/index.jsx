@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ProductItem from "./Product-item/";
 import "./style.scss";
+import productApi from "../../APIs/productApi";
 ProductList.propTypes = {};
 
 function ProductList(props) {
   const { list, handleAddCart } = props;
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await productApi.getAll();
+        setProducts(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
   return (
     <div className="product-container">
       <p>

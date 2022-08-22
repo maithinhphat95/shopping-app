@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useState, useContext } from "react";
 import CartBtn from "../../components/Cart-btn";
 import ProductList from "../../components/Product-list";
 import { httpRequest, dataStorage } from "../../constant";
 import ToTopBtn from "../../components/ToTopBtn";
-import "./style.scss";
 import Cart from "../../components/Cart";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import AddProduct from "../../components/AddProduct";
+import "./style.scss";
 
-Body.propTypes = {};
-
-function Body(props) {
+function Body() {
   // Init the url variable
   const [dataProduct, userProduct] = dataStorage;
   // hook
   const [productList, setProductList] = useState([]);
   const [cartList, setCartList] = useState([]);
-  const [showCart, setShowCart] = useState(false);
   const [toTop, setToTop] = useState(false);
   const [deps, setDeps] = useState(false);
   const navigate = useNavigate();
-
   // Fetch product list with Axios API
   // Get:
   useEffect(() => {
@@ -89,11 +84,6 @@ function Body(props) {
     });
   };
 
-  // Function show the Cart
-  const handleClickShowCart = (value) => {
-    setShowCart(value);
-  };
-
   // Function add product to Cart
   const handleAddCart = (item) => {
     let count = 1;
@@ -139,26 +129,21 @@ function Body(props) {
     <div className="body">
       <Routes>
         <Route
-          path="/shopping-app"
+          path="/shopping-app/products"
           element={
             <ProductList list={productList} handleAddCart={handleAddCart} />
           }
         />
         <Route
-          path="/shopping-app/add"
+          path="/shopping-app/products/add"
           element={
             <AddProduct productList={productList} handlePost={postProduct} />
           }
         />
       </Routes>
 
-      <CartBtn handleClickShowCart={handleClickShowCart} />
-      <Cart
-        display={showCart}
-        handleClickShowCart={handleClickShowCart}
-        cartList={cartList}
-        updateCart={updateCart}
-      />
+      <CartBtn />
+      <Cart cartList={cartList} updateCart={updateCart} />
       {toTop && <ToTopBtn handleToTop={handleToTop} />}
     </div>
   );

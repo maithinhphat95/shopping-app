@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import CartItem from "./Cart-item";
+import { ShowCartContext } from "../../Provider";
+
 Cart.propTypes = {};
 
 function Cart(props) {
   // Props
-  const { display, handleClickShowCart, cartList, updateCart } = props;
-  const cartWidth = display ? 500 : 0;
+  const { cartList, updateCart } = props;
+  // Hook
+  const context = useContext(ShowCartContext);
+  // Init variable
   let total = 0;
   let priceList = [];
   try {
@@ -21,11 +25,11 @@ function Cart(props) {
   } catch (error) {}
 
   return (
-    <div className="cart " style={{ width: cartWidth }}>
+    <div className="cart " style={{ width: context.showCart ? 500 : 0 }}>
       <div className="cart-header">
         <button
           onClick={() => {
-            handleClickShowCart(false);
+            context.handleClickShowCart(false);
           }}
         >
           <FontAwesomeIcon icon={faXmark} />

@@ -2,7 +2,7 @@ import axios from "axios";
 
 // URL for get data API
 export const url = "http://localhost:3002";
-export const dataStorage = ["productList", "cartList"];
+export const dataStorage = ["products", "cartList"];
 
 // Fetch API
 export const httpRequest = axios.create({
