@@ -10,14 +10,18 @@ import {
   Button,
   CardActions,
 } from "@material-ui/core";
-
-ProductItem.propTypes = {};
+import { addToCart } from "../../../redux/Shopping/shopping-actions";
+import { useDispatch } from "react-redux";
 
 function ProductItem(props) {
+  const dispatch = useDispatch();
+
   const { product, handleAddCart } = props;
-  const addCart = () => {
-    handleAddCart(product);
+  const addCart = (productId) => {
+    // handleAddCart(product);
+    dispatch(addToCart(productId));
   };
+
   return (
     <div className="product-item">
       <div className="img-box">
@@ -34,7 +38,7 @@ function ProductItem(props) {
         <p>${product.price}</p>
         <button
           onClick={() => {
-            addCart();
+            addCart(product.id);
           }}
         >
           Add to cart

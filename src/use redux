@@ -1,0 +1,7 @@
+How to use redux:
+
+1. Install redux library and redux devtool: npm i redux@4.0.5 react-redux redux-devtools-extension --save –force
+2. In the src folder:
+   a. Create folder redux:
+   a.1. Create
+   a.2. Create store of redux which will store the global state:

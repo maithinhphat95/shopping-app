@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import ProductItem from "./Product-item/";
 import "./style.scss";
 import productApi from "../../APIs/productApi";
-ProductList.propTypes = {};
-
 function ProductList(props) {
   const { list, handleAddCart } = props;
   const [products, setProducts] = useState([]);

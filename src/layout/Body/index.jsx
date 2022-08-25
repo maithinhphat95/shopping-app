@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import CartBtn from "../../components/Cart-btn";
 import ProductList from "../../components/Product-list";
 import { httpRequest, dataStorage } from "../../constant";
+import productApi from "../../APIs/productApi";
 import ToTopBtn from "../../components/ToTopBtn";
 import Cart from "../../components/Cart";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -20,6 +21,8 @@ function Body() {
   // Fetch product list with Axios API
   // Get:
   useEffect(() => {
+    // let list = productApi.getAll().data;
+    // setProductList(list);
     httpRequest
       .get(dataProduct)
       .then((response) => setProductList(response.data));
@@ -100,6 +103,7 @@ function Body() {
       putCart(carItem, "increase");
       setDeps(!deps);
     }
+    // Thêm product to card list nhưng chưa post API (redux), xíu làm việc mới midleware
   };
 
   // Handle update cart (count, delete)
